@@ -1,4 +1,8 @@
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Ionicons } from '@expo/vector-icons';
 
 import HomeScreen from './screens/HomeScreen';
 import WriteScreen from './screens/WriteScreen';
