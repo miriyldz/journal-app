@@ -1,24 +1,51 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Ionicons } from '@expo/vector-icons';
+import React from 'react';
 
-export default function App() {
+import HomeScreen from './screens/HomeScreen';
+import WriteScreen from './screens/WriteScreen';
+import HistoryScreen from './screens/HistoryScreen';
+import DetailScreen from './screens/DetailScreen';
+
+const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
+function Tabs() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarIcon: ({ color, size }) => {
+          let iconName;
+
+          if (route.name === 'AnaSayfa') {
+            iconName = 'home-outline';
+          } else if (route.name === 'Yaz') {
+            iconName = 'create-outline';
+          } else if (route.name === 'Geçmiş') {
+            iconName = 'book-outline';
+          }
+
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: '#4c4082',
+        tabBarInactiveTintColor: 'gray',
+        tabBarStyle: {
+      backgroundColor: '#FFC8DD',}
+      })}
+    >
+      <Tab.Screen name="AnaSayfa" component={HomeScreen} />
+      <Tab.Screen name="Yaz" component={WriteScreen} />
+      <Tab.Screen name="Geçmiş" component={HistoryScreen} />
+    </Tab.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Main" component={Tabs} options={{ headerShown: false }} />
+        <Stack.Screen name="Detay" component={DetailScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
