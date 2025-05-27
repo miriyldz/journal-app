@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     marginBottom: 10,
     borderRadius: 8,
+    backgroundColor: '#AED9E0',
   },
-  title: { fontSize: 18, fontWeight: 'bold' },
+  title: { fontSize: 18, fontWeight: 'bold', color: '#d81159'},
   date: { fontSize: 14, color: 'gray' },
 });

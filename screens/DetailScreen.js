@@ -15,8 +15,8 @@ export default function DetailScreen({ route }) {
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 20, flex: 1 },
-  title: { fontSize: 24, fontWeight: 'bold', marginBottom: 10 },
+  container: { padding: 20, flex: 1, },
+  title: { fontSize: 24, fontWeight: 'bold', marginBottom: 10, color: '#d81159' },
   date: { fontSize: 14, color: 'gray', marginBottom: 20 },
   content: { fontSize: 16 },
 });

@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
 
+
 import HomeScreen from './screens/HomeScreen';
 import WriteScreen from './screens/WriteScreen';
 import HistoryScreen from './screens/HistoryScreen';
@@ -30,7 +31,7 @@ function Tabs() {
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: '#4c4082',
+        tabBarActiveTintColor: '#d81159',
         tabBarInactiveTintColor: 'gray',
         tabBarStyle: {
       backgroundColor: '#FFC8DD',}
