@@ -27,7 +27,7 @@ Commitlerim master olarak yüklendi.
 **Reposu klonlayın:**
 
 ```bash
-git clone https://github.com/miriyldz/journal-app.git
+git clone --branch master https://github.com/miriyldz/journal-app.git
 cd journal-app --
 
 
